@@ -1,0 +1,22 @@
+// Place all the styles related to the Ninjas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.actionBoxes{
+        display:inline-block;
+        width:100px;
+        height:200px;
+        border:solid black 1px;
+    }
+
+    #gold{
+        width:50px;
+        display:inline-block;
+        border:solid black 1px;
+    }
+
+    #activityBox{
+        border:solid black 1px;
+        width:400px;
+        height:200px;
+        overflow-y:scroll;
+    }

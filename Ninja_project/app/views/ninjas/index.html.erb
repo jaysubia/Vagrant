@@ -1,0 +1,51 @@
+ <h2>Your Gold:</h2>
+     	<%=session[:number]%>
+        <form action="/ninjas/reset">
+            <input type='submit' name='reset' value='Start Over'>
+        </form>
+
+   <div class="actionBoxes">
+        <h5>Farm</h5>
+        <p>(earns 10-20 gold)</p>
+        <form action="/ninjas/farm" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" name="farm" value="Find Gold!"/>          
+        </form>
+
+    </div>
+   </div>
+   <div class="actionBoxes">
+        <h5>Cave</h5>
+        <p>(earns 5-10 gold)</p>
+        <form action="/ninjas/cave" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" name="cave" value="Find Gold!"/>           
+        </form>
+
+    </div>
+   </div>
+   <div class="actionBoxes">
+        <h5>House</h5>
+        <p>(earns 2-5 gold)</p>
+        <form action="/ninjas/house" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" name="house" value="Find Gold!"/>           
+        </form>
+
+    </div>
+   </div>
+   <div class="actionBoxes">
+        <h5>Casino</h5>
+        <p>(earns/takes -100-100 gold)</p>
+        <form action="/ninjas/casino" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" name="casino" value="Find Gold!"/> 
+        </form>
+
+    </div>
+    <h6>Activities</h6>
+<div id="activityBox">
+<%session[:message].each do |m| %>
+	<p><%= m %></p>
+<% end %>
+</div>

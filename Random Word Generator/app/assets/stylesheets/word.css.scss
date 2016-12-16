@@ -1,0 +1,23 @@
+// Place all the styles related to the Word controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+
+.container{
+	margin:0px auto;
+	width: 600px;
+	text-align: center;
+}
+
+.word_container{
+	margin:0px auto;
+}
+
+.word_container h2{ 
+  font-size: 15px;
+}
+
+p{
+	font-size: 30px;
+}

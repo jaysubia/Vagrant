@@ -1,0 +1,23 @@
+<header>Thanks for submitting this form!  You have submitted this form <%=session[:count]%> times now.</header>
+	<main>
+		<h3>Submitted Information</h3>
+		<div>
+			<p>Name:</p>
+			<p>Dojo Location:</p>
+			<p>Favorite Language:</p>
+			<p>Comment:</p>
+		</div>
+		<div >
+			<p><%=session["survey"]["name"]%></p>
+			<p><%=session["survey"]["location"]%></p>
+			<p><%=session["survey"]["language"]%></p>
+			<p><%=session["survey"]["comment"]%></p>
+			<p><%=session["survey"]["id"]%></p>
+		</div>
+		<div>
+			<form action="/surveys/restart" method="post">
+				<input type="hidden" name="authenticity_token" value=<%=form_authenticity_token%>>
+				<button type="submit">Go Back</button>
+			</form>
+		</div>
+	</main>

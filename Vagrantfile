@@ -14,7 +14,13 @@ Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/trusty64"
   config.vm.network "forwarded_port", guest: 3000, host: 3000
-  config.vm.provision :shell, path: "bootstrap.sh", privileged: false
+  
+  config.vm.provider "virtualbox" do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--cpus", 2]
+  end
+config.vm.provision :shell, path: "bootstrap.sh", privileged: false
+end
   
 
   # Disable automatic box update checking. If you disable this, then
@@ -71,4 +77,4 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-end
+

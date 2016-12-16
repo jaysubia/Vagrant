@@ -1,0 +1,14 @@
+<div class="container well">
+	<div class="word_container">
+		<!-- Show how many times a word was generated  -->
+		<h2>Random Word (attempt # <%= session[:counter] %>)</h2>
+		<!-- Show the random word if present -->
+		<p><%= session[:random_word] if session[:random_word].present? %></p>
+		<!-- Generate a word by submitting this form -->
+		<form action="/create_word" method="post">
+			<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/> 
+			<input type="submit" value="Generate">
+		</form>
+	</div>
+</div>
+
